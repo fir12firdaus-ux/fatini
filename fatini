@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For You ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fecfef);
+            margin-top: 120px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 38px;
+            color: white;
+            text-shadow: 2px 2px 5px #ff4d6d;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: 20px;
+            margin: 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.2);
+        }
+
+        #noBtn {
+            background-color: grey;
+            color: white;
+            position: absolute;
+        }
+
+        .heart {
+            position: fixed;
+            top: -10px;
+            color: red;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>To My Love 💌</h2>
+    <h1>Will you be my Valentine, NAMA DIA? ❤️</h1>
+
+    <button id="yesBtn" onclick="yesClicked()">Yes 💖</button>
+    <button id="noBtn" onmouseover="moveButton()">No 😢</button>
+
+    <script>
+        function yesClicked() {
+            document.body.innerHTML = `
+                <h1>Yayyyy! ❤️🥰</h1>
+                <h2>I love you so much!</h2>
+                <h2>- From Firdaus 💌</h2>
+            `;
+        }
+
+        function moveButton() {
+            const button = document.getElementById("noBtn");
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+
+        // Falling hearts
+        setInterval(() => {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }, 500);
+    </script>
+
+</body>
+</html>
