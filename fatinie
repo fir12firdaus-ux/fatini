@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For My Love ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fecfef);
+            margin-top: 120px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: white;
+            text-shadow: 2px 2px 8px #ff4d6d;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: 20px;
+            margin: 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.2);
+        }
+
+        #noBtn {
+            background-color: grey;
+            color: white;
+            position: absolute;
+        }
+
+        .heart {
+            position: fixed;
+            top: -10px;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+    </style>
+</head>
+<body>
+
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+    </audio>
+
+    <h2>To My Beautiful ❤️</h2>
+    <h1>Will you be my Valentine, AIN? 💖</h1>
+
+    <button id="yesBtn" onclick="yesClicked()">Yes 💘</button>
+    <button id="noBtn" onclick="noClicked()">No 😢</button>
+
+    <script>
+        let noSize = 20;
+
+        function yesClicked() {
+            document.body.innerHTML = `
+                <h1>YAYYYYYY ❤️🥰</h1>
+                <h2>You just made me the happiest guy alive!</h2>
+                <h2>- From
